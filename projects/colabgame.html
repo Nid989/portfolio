@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CoLabGame — Case Study · Nidhir Bhavsar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+  :root { --bg:#05070a; --fg:#e6edf3; --mute:#cfd8dc; --dim:rgba(207,216,220,0.65); --accent:#7aa2c7; --line:rgba(120,170,200,0.18); }
+  *,*::before,*::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--mute); font-family: 'Inter', sans-serif; line-height: 1.6; }
+  body {
+    background-image:
+      linear-gradient(rgba(120,170,200,0.04) 1px, transparent 1px),
+      linear-gradient(to right, rgba(120,170,200,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 56px 32px 96px; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+  nav .back { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; }
+  nav .crumbs { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--dim); text-transform: uppercase; }
+  .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-transform: lowercase; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 64px; line-height: 1.0; letter-spacing: -0.03em; margin: 32px 0 16px; color: var(--fg); }
+  h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; margin: 56px 0 16px; color: var(--fg); }
+  .lede { font-size: 19px; color: var(--mute); margin: 0 0 32px; max-width: 700px; }
+  .meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: var(--dim); text-transform: uppercase; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 24px 0 40px; }
+  .meta b { color: var(--fg); font-weight: 500; }
+  p { font-size: 15.5px; color: var(--mute); margin: 0 0 16px; }
+  ul { padding-left: 20px; margin: 0 0 16px; }
+  li { font-size: 15px; color: var(--mute); margin-bottom: 6px; }
+  .tldr { padding: 24px 28px; border: 1px solid var(--line); background: rgba(122,162,199,0.04); margin: 24px 0 40px; }
+  .tldr .label { display: block; margin-bottom: 8px; }
+  .figure { margin: 32px 0; padding: 28px; border: 1px dashed rgba(120,170,200,0.25); text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--dim); }
+  .stack { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0 0; }
+  .stack span { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 3px 10px; border: 1px solid var(--line); color: var(--mute); }
+  .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(120,170,200,0.12); border: 1px solid rgba(120,170,200,0.18); margin: 24px 0; }
+  .results > div { background: var(--bg); padding: 22px 20px; }
+  .results .k { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; }
+  .results .v { font-family: 'Space Grotesk', sans-serif; font-size: 32px; color: var(--fg); }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--dim); letter-spacing: 0.12em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="../Portfolio.html" class="back">← back to portfolio</a>
+    <span class="crumbs">case study · 01</span>
+  </nav>
+
+  <span class="label">// m.sc. thesis · u. potsdam · 2025</span>
+  <h1>CoLabGame.</h1>
+  <p class="lede">A benchmark and framework for comparing single-, hierarchical-, and decentralized multi-agent LLM systems on real-world computer-use tasks.</p>
+
+  <div class="meta">
+    <span><b>role</b> · sole author</span>
+    <span><b>advisor</b> · u. potsdam</span>
+    <span><b>year</b> · 2025</span>
+    <span><b>status</b> · defended</span>
+  </div>
+
+  <div class="tldr">
+    <span class="label">// tldr</span>
+    Centralized hierarchical agent architectures consistently beat both flat multi-agent councils and single-agent baselines on robustness, efficiency, and cost — across GPT-5, GPT-5-mini, Gemini-2.5, and Claude-4-Sonnet, on real OSWorld desktop tasks.
+  </div>
+
+  <h2>Problem</h2>
+  <p>Most LLM-agent benchmarks test single agents on toy tasks. Real desktop work — clicking through GUIs, dropping into a terminal, juggling files and forms — needs coordination across heterogeneous interfaces. There weren't good evaluations for it, and the few multi-agent papers I read disagreed about whether coordination overhead was worth the price.</p>
+
+  <h2>What I built</h2>
+  <p>CoLabGame is a Python evaluation framework that runs the same OSWorld task suite against three classes of agent system:</p>
+  <ul>
+    <li><b>Single agent</b> — one model, one prompt, one trajectory.</li>
+    <li><b>Decentralized multi-agent</b> — peer agents that communicate to coordinate, no central planner.</li>
+    <li><b>Hierarchical multi-agent</b> — a planner agent decomposes the task and delegates to skill-specialized executors.</li>
+  </ul>
+  <p>Each class is parameterized by role-based collaboration topologies, orchestration protocols, and the underlying LLM. Failure modes, coordination cost, and operational $/token are all logged.</p>
+
+  <div class="figure">[ figure: system architecture diagram — three topologies side by side ]</div>
+
+  <h2>Results</h2>
+  <div class="results">
+    <div><div class="k">topology winner</div><div class="v">hierarchical</div></div>
+    <div><div class="k">tasks evaluated</div><div class="v">OSWorld</div></div>
+    <div><div class="k">models tested</div><div class="v">4</div></div>
+  </div>
+  <p>Hierarchical setups recovered from individual-agent failures more often, completed multi-step tasks more reliably, and ran cheaper than decentralized peer councils — which spent a surprising fraction of their budget on inter-agent chatter that didn't change the plan.</p>
+
+  <h2>What I'd do differently</h2>
+  <ul>
+    <li>Test on a wider task distribution — OSWorld leans desktop-heavy; would love to add browser-only and terminal-only baselines.</li>
+    <li>Vary the planner model and the executor models independently. There's a cheap-planner / strong-executor configuration I never got to try.</li>
+    <li>Add a learned router that picks topology per-task instead of fixing it upfront.</li>
+  </ul>
+
+  <h2>Stack</h2>
+  <div class="stack">
+    <span>Python</span><span>OSWorld</span><span>GPT-5</span><span>GPT-5-mini</span><span>Gemini-2.5</span><span>Claude-4-Sonnet</span><span>LangGraph</span>
+  </div>
+
+  <footer>
+    <span>© 2026 nidhir bhavsar</span>
+    <span><a href="../Portfolio.html">← back to portfolio</a></span>
+  </footer>
+</div>
+</body>
+</html>
