@@ -1,3 +1,4 @@
 handoff/
 .vercel/
 .DS_Store
+.vercel

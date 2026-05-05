@@ -419,14 +419,15 @@ details[open] > .pub-row { background: var(--surface); }
 }
 .writing-grid {
   display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 1px;
-  background: var(--line-dim);
+  gap: 1px; background: var(--line-dim);
   border: 1px solid var(--line);
   border-top: none;
 }
+.writing-filler { background: var(--bg); }
 .writing-card {
   background: var(--bg); padding: 24px; min-height: 200px;
   display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+  box-shadow: 1px 0 0 var(--line), 0 1px 0 var(--line);
 }
 .writing-card .head { display: flex; justify-content: space-between; margin-bottom: 12px; gap: 12px; }
 .writing-card h4 { font-size: 17px; color: var(--fg); font-family: var(--display); margin: 0 0 10px; letter-spacing: -0.015em; line-height: 1.25; }
@@ -434,7 +435,6 @@ details[open] > .pub-row { background: var(--surface); }
 .writing-card .more { font-size: 10px; color: var(--dim); opacity: 0.6; letter-spacing: 0.2em; font-family: var(--mono); }
 .writing-card.draft .meta-date { color: var(--accent); opacity: 1; }
 .writing-card.archive {
-  border: 1px dashed var(--line); margin: -1px;
   justify-content: center; gap: 8px;
 }
 .writing-card.archive .head-row { font-size: 14px; color: var(--dim); font-family: var(--display); line-height: 1.4; }
@@ -548,7 +548,7 @@ footer.foot {
           <span style="opacity:0.7">// </span>click to flip theme
         </div>
       </div>
-      <span class="nav-name">nidhir.bhavsar</span>
+      <a class="nav-name" href="#" onclick="scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname);return false;">nidhir.bhavsar</a>
     </div>
     <div class="nav-links">
       <a href="#work"><span class="bracket">./</span>work</a>
@@ -873,6 +873,8 @@ document.getElementById('writing-grid').innerHTML = data.posts.slice(1).map(p =>
     <div class="head-row">Older notes &amp; reading list.</div>
     <div class="sub">RSS · /writing/archive</div>
   </div>
+  <div class="writing-filler"></div>
+  <div class="writing-filler"></div>
 `;
 
 // Skills
@@ -980,6 +982,39 @@ try {
       }, 20);
     }, 220);
   });
+})();
+
+// Scroll-spy: update URL hash as sections enter viewport
+(function() {
+  const sections = ['work','projects','publications','writing','stack','education','contact'];
+  let atTop = true;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      history.replaceState(null, '', '#' + id);
+      atTop = false;
+    });
+  }, {
+    rootMargin: '-20% 0px -75% 0px', // trigger when section is in upper quarter of viewport
+  });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) io.observe(el);
+  });
+
+  // Clear hash when scrolled back to top (hero visible)
+  const heroIO = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      history.replaceState(null, '', location.pathname);
+      atTop = true;
+    }
+  }, { rootMargin: '0px 0px -80% 0px' });
+
+  const hero = document.querySelector('.hero');
+  if (hero) heroIO.observe(hero);
 })();
 </script>
 </body>
