@@ -56,11 +56,10 @@ def collect_files(root: str) -> list[dict]:
 
 
 def create_deployment(files: list[dict]) -> dict:
-    body = json.dumps({
-        "name": "portfolio",
-        "target": TARGET,
-        "files": files,
-    }).encode()
+    payload = {"name": "portfolio", "files": files}
+    if TARGET == "production":
+        payload["target"] = "production"
+    body = json.dumps(payload).encode()
     headers = {**AUTH, "Content-Type": "application/json"}
     req = urllib.request.Request(f"{API}/v13/deployments?teamId={TEAM_ID}", data=body, headers=headers, method="POST")
     try:
