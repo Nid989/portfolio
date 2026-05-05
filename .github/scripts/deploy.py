@@ -58,7 +58,6 @@ def collect_files(root: str) -> list[dict]:
 def create_deployment(files: list[dict]) -> dict:
     body = json.dumps({
         "name": "portfolio",
-        "projectId": PROJECT_ID,
         "target": TARGET,
         "files": files,
     }).encode()
