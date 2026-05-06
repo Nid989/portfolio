@@ -571,25 +571,11 @@ footer.foot {
       <span class="accent">AI systems.</span>
     </h1>
     <p class="hero-intro">
-      I work on the unglamorous middle of AI products — multi-agent orchestration, structured document pipelines, evaluation harnesses, and the observability that makes LLM systems boring enough to trust in production. Currently at <strong>1Alpha</strong> in Munich, fresh off a Master's at <strong>U. Potsdam</strong>.
+      AI engineer based in Berlin. I build multi-agent systems, document processing pipelines, and evaluation infrastructure. M.Sc. from <strong>Universität Potsdam</strong>, currently at <strong>1Alpha</strong>.
     </p>
     <div class="hero-ctas">
       <a class="btn-primary" href="#" onclick="event.preventDefault();this.classList.add('toast-shown');let t=document.createElement('span');t.className='cv-toast';t.textContent='coming soon!';this.appendChild(t);setTimeout(()=>{t.remove();this.classList.remove('toast-shown')},1800)">download résumé</a>
       <a class="btn-secondary" href="mailto:nidbhavsarde989@gmail.com">nidbhavsarde989@gmail.com</a>
-    </div>
-    <div class="status-grid">
-      <div>
-        <div class="label k">// currently</div>
-        <div class="v">Shipping LangGraph orchestration &amp; schema-validated PDF pipelines for insurance contracts at 1Alpha.</div>
-      </div>
-      <div>
-        <div class="label k">// interested in</div>
-        <div class="v">AI Evals, AI-native vertical SaaS, browser and computer-use agents, and building reliable, future-agnostic agent harnesses systems.</div>
-      </div>
-      <div>
-        <div class="label k">// open to</div>
-        <div class="v">AI Engineer, FDE, hybrid Eng/PM, co-founder roles, and research collabs. Remote-first, open to the right location</div>
-      </div>
     </div>
   </section>
 
@@ -644,7 +630,11 @@ footer.foot {
   <section id="contact" class="contact">
     <span class="label" style="display:block;margin-bottom:8px;">// contact</span>
     <h2>Let's <span class="accent">talk</span>.</h2>
-    <p>Hiring, collaborating, or just want to chat? Email works best. I usually reply within a day or two.</p>
+    <p>Best way to reach me is email. I usually reply within a day or two.</p>
+    <div class="contact-details" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;max-width:680px;">
+      <div><span class="label" style="display:block;margin-bottom:6px;">// interested in</span><span style="font-size:14px;color:var(--mute);line-height:1.5;">AI Evals, AI-native vertical SaaS, browser and computer-use agents, reliable agent infrastructure.</span></div>
+      <div><span class="label" style="display:block;margin-bottom:6px;">// open to</span><span style="font-size:14px;color:var(--mute);line-height:1.5;">AI Engineer, FDE, hybrid Eng/PM, co-founder roles, research collabs. Remote-first, open to the right location.</span></div>
+    </div>
     <div class="contact-links">
       <a class="contact-link primary" href="mailto:nidbhavsarde989@gmail.com">email →</a>
       <a class="contact-link" href="https://github.com/Nid989" target="_blank" rel="noopener">github</a>
@@ -684,7 +674,7 @@ const data = {
         "Led a supply-chain RAG project to recommend Bill-of-Materials alternatives, built on LLaMA2, vector DB, and vLLM. Validated with RAGAs and deployed to AWS via GitHub Actions."
       ],
       stack: ["vLLM","RAG","RAGAs","Few-Shot Learning","Prototypical Networks","BERT","FastAPI","SLURM"] },
-    { role: "Student Researcher", company: "Foundations of Computational Linguistics Lab, U. Potsdam", period: "Oct 2023 — Jun 2024", location: "Potsdam, Germany",
+    { role: "Student Researcher", company: "Foundations of Computational Linguistics Lab, Universität Potsdam", period: "Oct 2023 — Jun 2024", location: "Potsdam, Germany",
       bullets: [
         "Led an evaluation study of LLM trade-offs across model scale, instruction-tuning data quality, quantization, and access methods on goal-oriented conversational tasks.",
         "Designed scalable evaluation pipelines covering GPT-4, Claude Sonnet, and LLaMA-3, with comparisons across performance, cost, latency, and deployment constraints to guide model selection decisions.",
@@ -700,19 +690,19 @@ const data = {
       stack: ["BART","OPUS-MT","Transfer Learning","Fine-Tuning","Speech Translation","Multilingual NLP","PyTorch"] }
   ],
   projects: [
-    { title: "CoLabGame", tag: "M.Sc. Thesis · U. Potsdam",
+    { title: "CoLabGame", tag: "M.Sc. Thesis · Universität Potsdam",
       blurb: "Evaluation framework for benchmarking single-agent and multi-agent LLMs on real desktop tasks in OSWorld. Hierarchical agent setups with a central planner consistently outperformed de-centralized and single-agent configurations.",
       stack: ["Multi-Agent","OSWorld","LLM Eval","Python","GPT-5","Claude-4"], year: "2025", status: "Defended", slug: "colabgame",
       problem: "Most LLM-agent benchmarks test single agents on toy tasks inside sandbox environments. Real desktop work requires coordination across GUIs, terminals, and multimodal interfaces, but there was a lack of good evaluation for it.",
       contribution: "Built CoLabGame: a benchmark and framework that runs single, hierarchical, and decentralized multi-agent systems against the same OSWorld tasks. Includes role-based collaboration topologies and orchestration protocols.",
       result: "Hierarchical architectures with a centralized planner beat flat multi-agent councils and single-agent baselines on robustness, efficiency, and cost. Tested across GPT-5, GPT-5-mini, Gemini-2.5, and Claude-4-Sonnet." },
-    { title: "Emergent Abilities in cLLMs", tag: "Independent Research · U. Potsdam",
+    { title: "Emergent Abilities in cLLMs", tag: "Independent Research · Universität Potsdam",
       blurb: "Study of LLM agent behavior in self-play conversational tasks. Increased model scale does not consistently translate to better conversational performance.",
       stack: ["Self-Play","Scaling Laws","LLM Eval","Python"], year: "2024", status: "Published",
       problem: "Bigger models were assumed to be better at dialogue. But conversational tasks involve goal-tracking, theory-of-mind, and recovery from misunderstandings, and none of that shows up cleanly in standard benchmarks.",
       contribution: "Used a self-play eval harness where LLMs play goal-oriented dialogue games against themselves and other models. Measured and studied task completion, coherence, and reasoning trace quality across model sizes.",
       result: "Larger doesn't always mean better. Mid-sized instruction-tuned models often beat their bigger counterparts on conversational reliability. Useful signal for practical model selection." },
-    { title: "Interaction is All You Need", tag: "Embodied Agents · U. Potsdam",
+    { title: "Interaction is All You Need", tag: "Embodied Agents · Universität Potsdam",
       blurb: "Study on enabling robots to understand and execute complex instructions from dialogue history. Fused BART with ViT into a multimodal model for the TEACh benchmark, then compared against a PEFT-finetuned LLaMA2 with no visual context. The language-only model still outperformed the full multimodal training.",
       stack: ["BART","LLaMA 2","ViT","PEFT","TEACh","Embodied AI"], year: "2023", status: "Published",
       problem: "Robots operating in human environments need to follow multi-step instructions grounded in dialogue context. Most approaches predict one action at a time, losing sight of the broader task plan.",
@@ -744,7 +734,7 @@ const data = {
     "Cloud & Infra": ["AWS","Azure","GCP","Kubernetes","Terraform","SLURM","GitHub Actions"]
   },
   education: [
-    { degree: "M.Sc. Cognitive Systems", school: "University of Potsdam", period: "", detail: "Interdisciplinary program bridging machine learning, advanced NLP, computational linguistics, psycholinguistics, reasoning, and intelligent problem solving. GPA 1.4 / 1.0 (German scale)." },
+    { degree: "M.Sc. Cognitive Systems", school: "Universität Potsdam", period: "", detail: "Interdisciplinary program bridging machine learning, advanced NLP, computational linguistics, psycholinguistics, reasoning, and intelligent problem solving. GPA 1.4 / 1.0 (German scale)." },
     { degree: "B.Tech. Computer Science & Engineering", school: "Navrachana University, Vadodara", period: "", detail: "" }
   ]
 };
