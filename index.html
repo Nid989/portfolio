@@ -250,6 +250,9 @@ ul { margin: 0; }
   display: inline-block;
 }
 .btn-primary:hover { filter: brightness(1.1); }
+.btn-primary { position: relative; }
+.cv-toast { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--fg); color: var(--bg); font-family: var(--mono); font-size: 11px; padding: 6px 14px; white-space: nowrap; border-radius: 4px; animation: toast-in 0.2s ease-out; pointer-events: none; }
+@keyframes toast-in { from { opacity: 0; transform: translateX(-50%) translateY(4px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
 .btn-secondary:hover { color: var(--fg); border-color: var(--accent); }
 
 .status-grid {
@@ -571,7 +574,7 @@ footer.foot {
       I work on the unglamorous middle of AI products — multi-agent orchestration, structured document pipelines, evaluation harnesses, and the observability that makes LLM systems boring enough to trust in production. Currently at <strong>1Alpha</strong> in Munich, fresh off a Master's at <strong>U. Potsdam</strong>.
     </p>
     <div class="hero-ctas">
-      <a class="btn-primary" href="cv.pdf" download>download résumé</a>
+      <a class="btn-primary" href="#" onclick="event.preventDefault();this.classList.add('toast-shown');let t=document.createElement('span');t.className='cv-toast';t.textContent='coming soon!';this.appendChild(t);setTimeout(()=>{t.remove();this.classList.remove('toast-shown')},1800)">download résumé</a>
       <a class="btn-secondary" href="mailto:nidbhavsarde989@gmail.com">nidbhavsarde989@gmail.com</a>
     </div>
     <div class="status-grid">
@@ -641,15 +644,15 @@ footer.foot {
   <section id="contact" class="contact">
     <span class="label" style="display:block;margin-bottom:8px;">// contact</span>
     <h2>Let's <span class="accent">talk</span>.</h2>
-    <p>Hiring, collaborating, or just want to nerd out about agent evals? Email's the most reliable channel — usually reply within a day or two.</p>
+    <p>Hiring, collaborating, or just want to chat? Email works best. I usually reply within a day or two.</p>
     <div class="contact-links">
       <a class="contact-link primary" href="mailto:nidbhavsarde989@gmail.com">email →</a>
       <a class="contact-link" href="https://github.com/Nid989" target="_blank" rel="noopener">github</a>
       <a class="contact-link" href="https://linkedin.com/in/nidhir-bhavsar-054b231b6" target="_blank" rel="noopener">linkedin</a>
-      <a class="contact-link" href="https://scholar.google.com/" target="_blank" rel="noopener">scholar</a>
+      <a class="contact-link" href="https://scholar.google.com/citations?user=OIVwQE0AAAAJ" target="_blank" rel="noopener">scholar</a>
     </div>
     <footer class="foot">
-      <span>© 2026 nidhir bhavsar · built from scratch</span>
+      <span>© 2026 nidhir bhavsar</span>
       <span>last updated may 2026</span>
     </footer>
   </section>
@@ -732,9 +735,7 @@ const data = {
   ],
   posts: [
     { title: "Why your LLM eval harness is lying to you", blurb: "Patterns I keep seeing in production eval suites that pass green while the real system regresses silently.", date: "Coming soon", readTime: "~ 8 min" },
-    { title: "Hierarchical agents > flat agents (mostly)", blurb: "What I learned building CoLabGame: when a centralized planner beats a council of equals, and when it doesn't.", date: "Coming soon", readTime: "~ 10 min" },
-    { title: "Schema-validated PDF pipelines, in practice", blurb: "Field notes from extracting structured data out of insurance contracts at 1Alpha — what actually works past the demo.", date: "Coming soon", readTime: "~ 6 min" },
-    { title: "Multi-provider LLM routing without the headaches", blurb: "A small playbook for retries, fallbacks, and cost-aware routing across OpenAI / Anthropic / Google / Azure-OpenAI.", date: "Draft", readTime: "~ 7 min" }
+    { title: "Schema-validated PDF pipelines, in practice", blurb: "Field notes from extracting structured data out of insurance contracts at 1Alpha — what actually works past the demo.", date: "Coming soon", readTime: "~ 6 min" }
   ],
   skills: {
     "AI / Agents": ["LangGraph","LlamaIndex","MCP","RAG","Multi-agent systems","LLM evals","PEFT","Fine-tuning"],
@@ -743,8 +744,8 @@ const data = {
     "Cloud & Infra": ["AWS","Azure","GCP","Kubernetes","Terraform","SLURM","GitHub Actions"]
   },
   education: [
-    { degree: "M.Sc. Cognitive Systems", school: "University of Potsdam", period: "Oct 2022 — Sep 2025", detail: "GPA 1.4 / 1.0 (German scale, ~equivalent to top of class). Thesis on multi-agent LLMs in real-world automation environments." },
-    { degree: "B.Tech. Computer Science & Engineering", school: "Navrachana University, Vadodara", period: "Jun 2018 — Jun 2022", detail: "GPA 8.2 / 10. Began publishing research as an undergrad — multilingual speech translation, automatic minuting, dialogue systems." }
+    { degree: "M.Sc. Cognitive Systems", school: "University of Potsdam", period: "", detail: "Interdisciplinary program bridging machine learning, advanced NLP, computational linguistics, psycholinguistics, reasoning, and intelligent problem solving. GPA 1.4 / 1.0 (German scale)." },
+    { degree: "B.Tech. Computer Science & Engineering", school: "Navrachana University, Vadodara", period: "", detail: "" }
   ]
 };
 
