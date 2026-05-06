@@ -313,7 +313,7 @@ details[open] > .exp-row { background: var(--surface); }
 .exp-loc { font-size: 11px; color: var(--dim); opacity: 0.7; }
 .exp-role { font-size: 18px; font-weight: 500; color: var(--fg); font-family: var(--display); margin-bottom: 2px; }
 .exp-co { font-size: 12.5px; color: var(--accent); }
-.exp-body { padding: 0 24px 28px 228px; }
+.exp-body { padding: 14px 24px 28px 228px; }
 .exp-body ul { padding-left: 20px; color: var(--dim); font-size: 13.5px; line-height: 1.7; font-family: var(--body); }
 .exp-body li { margin-bottom: 6px; }
 .chips { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -508,7 +508,7 @@ footer.foot {
   .exp-row .exp-meta { display: none; }
   .exp-meta-mobile { display: block; margin-top: 8px; }
   .exp-meta-mobile .label { display: inline; margin-right: 8px; }
-  .exp-body { padding: 0 16px 24px 16px; }
+  .exp-body { padding: 10px 16px 24px 16px; }
   .proj-row { padding: 18px 18px; }
   .proj-title { font-size: 22px; }
   .proj-body { padding: 8px 18px 22px; }
@@ -562,13 +562,6 @@ footer.foot {
 
   <!-- Hero -->
   <section class="hero">
-    <div class="label hero-meta">
-      <span class="item"><span class="dot"></span>potsdam · de</span>
-      <span class="sep">/</span>
-      <span>ai engineer</span>
-      <span class="sep">/</span>
-      <span>5 yrs</span>
-    </div>
     <h1>
       Nidhir Bhavsar.
       <span class="accent">Building reliable</span>
@@ -587,12 +580,12 @@ footer.foot {
         <div class="v">Shipping LangGraph orchestration &amp; schema-validated PDF pipelines for insurance contracts at 1Alpha.</div>
       </div>
       <div>
-        <div class="label k">// thinking about</div>
-        <div class="v">Eval harnesses that catch silent regressions. Hierarchical agent topologies. Cost-aware fallback strategies.</div>
+        <div class="label k">// interested in</div>
+        <div class="v">AI Evals, AI-native vertical SaaS, browser and computer-use agents, and building reliable, future-agnostic agent harnesses systems.</div>
       </div>
       <div>
         <div class="label k">// open to</div>
-        <div class="v">AI Engineer / FDE / hybrid Eng+PM roles. EU-based or remote. Teams that ship and write.</div>
+        <div class="v">AI Engineer, FDE, hybrid Eng/PM, co-founder roles, and research collabs. Remote-first, open to the right location</div>
       </div>
     </div>
   </section>
@@ -667,40 +660,41 @@ const data = {
   experience: [
     { role: "AI Engineer", company: "1Alpha GmbH", period: "Dec 2025 — Present", location: "Munich, Germany",
       bullets: [
-        "Drove early architectural improvements to agentic LLM workflow by introducing LangGraph-based orchestration — improving robustness, fallback handling, and runtime performance for Azure-hosted LLMs.",
-        "Owned production readiness via CI/CD automation, monitoring, fallback strategies and deployment reliability for Azure-hosted LLM systems.",
-        "Improved LLM-driven document processing for complex insurance-contract PDFs: refactored schema-based extraction, added structured validation layers, and stabilized distributed task orchestration (Celery/Redis) with Langfuse observability across AWS deployments."
+        "Led the evolution of a schema-driven Document AI platform for extracting structured data from complex insurance and business PDFs. Drove model and parser strategy across Azure OpenAI, Anthropic Bedrock, and LlamaParse, with fallback handling, structured JSON extraction, and repeatable-field support.",
+        "Built an AI-assisted claims data pipeline that transforms messy insurer spreadsheets (bordereaux, Excel, CSV) into standardized outputs. Implemented guarded LLM transformation stages, row-indexed payload contracts, deterministic merge-back logic, retry handling, and token/cost tracking.",
+        "Introduced Langfuse-based evaluation workflows using curated test sets and LLM-as-a-judge comparisons to benchmark AI strategies against baselines, detect regressions, and guide production adoption decisions.",
+        "Currently redesigning extraction workflows into a harness-based architecture using LangChain Deep Agents, with modular sub-agent responsibilities, runtime capabilities, and inspectable orchestration."
       ],
-      stack: ["LangGraph","Azure","AWS","Celery","Redis","Langfuse","CI/CD"] },
+      stack: ["LangGraph","LangChain Deep Agents","Langfuse","LlamaParse","Azure OpenAI","Anthropic Bedrock","FastAPI","Pydantic"] },
     { role: "AI Engineer", company: "Patrick Bunk Wiescke", period: "Oct 2024 — Nov 2025", location: "Berlin, Germany",
       bullets: [
-        "Architected a LangGraph-based multi-agent system enabling web interaction, automated email triage via MCP, and intent-driven ServiceNow ticket creation — ~30% performance gains via meta-learning and SOP-guided behaviors.",
-        "Designed a structured data extraction & validation pipeline for complex client PDF forms — iterative prompt engineering, schema validation, LLM-as-a-judge eval loops — achieving near-100% accuracy across document types.",
-        "Built LLM observability infrastructure with LangSmith: end-to-end tracing, telemetry, human-in-the-loop interrupts, and continuous workflow evaluation.",
-        "Implemented multi-provider LLM orchestration with intelligent routing, retries, and fallbacks across OpenAI, Google, Anthropic, and Azure-deployed models."
+        "Built and benchmarked Workbench, a browser-use agent system for automating web workflows. Optimized performance through SOP-driven meta-learning and ran comparisons across WorkArena and WebArena benchmarks to evaluate agent reliability and task completion.",
+        "Built extraction and validation pipelines for Currenta's site security application review process. Iterated on prompt design, schema validation, and LLM-as-a-judge eval loops across multiple AI providers to reliably pull structured data from complex PDF forms.",
+        "Set up multi-provider LLM orchestration with routing, retries, and fallbacks across OpenAI, Google, Anthropic, and Azure. Instrumented workflows with LangSmith tracing and ran evals across all projects to track regressions and compare strategies.",
+        "Built a multilingual content pipeline for Cybex to translate product pages across European languages at scale. Ran evals against manually annotated ground truth to validate translation quality and catch domain-specific terminology drift."
       ],
-      stack: ["LangGraph","LangSmith","MCP","ServiceNow","OpenAI","Anthropic","Azure"] },
+      stack: ["LangGraph","LangSmith","MCP","Computer Use","Browser Agents","OpenAI","Anthropic","LLM-as-a-Judge"] },
     { role: "Student Research Assistant", company: "DFKI-SLT (German Research Center for AI)", period: "Jan 2023 — Sep 2024", location: "Berlin, Germany",
       bullets: [
-        "Developed a low-resource information extraction pipeline using BERT and few-shot learning (prototypical networks, episodic clustering); matched fine-tuned domain-specific models and LLMs across multiple domains.",
-        "Maintained an on-prem open-source LLM sandbox with a ChatGPT-like UI (FastAPI + React); served HuggingFace models via vLLM with streaming, logging, and SLURM-based controlled evaluation.",
-        "Led a supply-chain optimization project building a RAG application for Bill-of-Materials alternatives — LLaMA2 + vector DB + vLLM, validated with RAGAs, deployed to AWS via GitHub Actions."
+        "Built a low-resource information extraction pipeline using BERT with few-shot learning (prototypical networks, episodic clustering). Matched performance of fine-tuned domain models and LLMs across multiple domains with a fraction of the labeled data.",
+        "Maintained an on-prem LLM inference sandbox with a custom chat UI (FastAPI + React), serving HuggingFace models via vLLM with streaming, logging, and SLURM-based evaluation runs.",
+        "Led a supply-chain RAG project to recommend Bill-of-Materials alternatives, built on LLaMA2, vector DB, and vLLM. Validated with RAGAs and deployed to AWS via GitHub Actions."
       ],
-      stack: ["BERT","vLLM","FastAPI","React","LLaMA2","RAGAs","SLURM","AWS"] },
+      stack: ["vLLM","RAG","RAGAs","Few-Shot Learning","Prototypical Networks","BERT","FastAPI","SLURM"] },
     { role: "Student Researcher", company: "Foundations of Computational Linguistics Lab, U. Potsdam", period: "Oct 2023 — Jun 2024", location: "Potsdam, Germany",
       bullets: [
-        "Led evaluation of LLM trade-offs across model scale, instruction-tuning data quality, quantization, and access methods for goal-oriented tasks.",
-        "Designed scalable evaluation pipelines across GPT-4, Claude Sonnet, LLaMA-3 — enabling data-driven model selection on performance, cost, latency, and deployment constraints.",
-        "Showed that data quality can rival model scale in conversational performance."
+        "Led an evaluation study of LLM trade-offs across model scale, instruction-tuning data quality, quantization, and access methods on goal-oriented conversational tasks.",
+        "Designed scalable evaluation pipelines covering GPT-4, Claude Sonnet, and LLaMA-3, with comparisons across performance, cost, latency, and deployment constraints to guide model selection decisions.",
+        "Showed that instruction-tuning data quality can rival raw model scale in conversational performance. Findings published in 'How Many Parameters Does it Take to Change a Light Bulb?' on ArXiv."
       ],
-      stack: ["GPT-4","Claude","LLaMA-3","Eval pipelines"] },
-    { role: "Research Intern", company: "Research Institute · India", period: "2021 — 2022", location: "India",
+      stack: ["LLM Eval","Self-Play","Scaling Laws","Quantization","Claude","LLaMA-3","Python"] },
+    { role: "Research Intern", company: "CSDAI, IIIT Lucknow", period: "Aug 2021 — Oct 2022", location: "India",
       bullets: [
-        "Contributed to multilingual NLP research during undergrad — speech translation, automatic minuting of multi-party dialogues, and dialogue systems.",
-        "Co-authored 4 peer-reviewed publications across PACLIC 36, SIGDIAL 2022, and Interspeech AutoMin 2021 — early signal that I'd lean research-heavy.",
-        "Built end-to-end pipelines for the AutoMin shared task and the DeepCon multilingual minuting toolkit."
+        "Worked on Machine Translation under length constraints for downstream applications like automatic dubbing and video captioning. Built hierarchical pipelines with OPUS-MT and BART, combined with prompt engineering across language pairs.",
+        "Worked on Automatic Minuting using fine-tuned BART with Text Rank and transfer learning across two datasets. Submission as Team ABC ranked first at the AutoMin shared task.",
+        "Co-authored 6 peer-reviewed publications across Interspeech, SIGDIAL, and ACL during the internship, spanning multilingual NLP, speech translation, and biomedical literature classification."
       ],
-      stack: ["PyTorch","HuggingFace","Speech models","Multilingual NLP"] }
+      stack: ["BART","OPUS-MT","Transfer Learning","Fine-Tuning","Speech Translation","Multilingual NLP","PyTorch"] }
   ],
   projects: [
     { title: "CoLabGame", tag: "M.Sc. Thesis · U. Potsdam",
