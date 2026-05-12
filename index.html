@@ -551,7 +551,7 @@ footer.foot {
           <span style="opacity:0.7">// </span>click to flip theme
         </div>
       </div>
-      <a class="nav-name" href="#" onclick="scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname);return false;">nidhir.bhavsar</a>
+      <a class="nav-name" href="#" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname);">nidhir.bhavsar</a>
     </div>
     <div class="nav-links">
       <a href="#work"><span class="bracket">./</span>work</a>
